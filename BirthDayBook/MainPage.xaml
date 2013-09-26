@@ -59,7 +59,7 @@
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"/>
         <Image HorizontalAlignment="Left" Height="65" Margin="27,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="png/Add_Contact.png" Tap="tap1"/>
 
-        <ListBox Name="LB" Width="450" ItemsSource="{Binding}" SelectionChanged="listBox_SelectionChanged" Margin="12,214,29,30" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+        <ListBox Name="LB" Width="450" ItemsSource="{Binding}" SelectionChanged="listBox_SelectionChanged" Margin="10,234,20,10" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
             <ListBox.ItemTemplate >
                 <DataTemplate ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <Button Width="450" Height="120" Click="Next_click" Background="#FF395899">
@@ -108,8 +108,8 @@
             </Image.RenderTransform>
         </Image>
         <Image Name="img" HorizontalAlignment="Left" Height="100" Margin="133,109,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
-        <Image Name="abc" HorizontalAlignment="Left" Height="65" Margin="160,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="/sortascend.png" Tap="Sorting" />
-        <Image x:Name="abc_Copy" HorizontalAlignment="Left" Height="65" Margin="97,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="/sort.png" Tap="DaysLeft"  />
+        <Image Name="abc" HorizontalAlignment="Left" Height="30" Margin="167,199,0,0" Grid.Row="1" VerticalAlignment="Top" Width="40" Source="/sortascend.png" Tap="Sorting" />
+        <Image x:Name="abc_Copy" HorizontalAlignment="Left" Height="30" Margin="108,199,0,0" Grid.Row="1" VerticalAlignment="Top" Width="39" Source="/sort.png" Tap="DaysLeft"  />
 
         <!--ContentPanel - place additional content here-->
 
