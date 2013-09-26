@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32F189B1-1756-41B1-846B-202532392AAE}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BirthDayBook</RootNamespace>
+    <AssemblyName>BirthDayBook</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>BirthDayBook.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>BirthDayBook.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Resco.Controls, Version=2.1.6.0, Culture=neutral, PublicKeyToken=7444f602060105f9, processorArchitecture=MSIL" />
+    <Reference Include="system.data.linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.xaml.cs">
+      <DependentUpon>about.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BdDataContext.cs" />
+    <Compile Include="DbClass.cs" />
+    <Compile Include="details.xaml.cs">
+      <DependentUpon>details.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Email.xaml.cs">
+      <DependentUpon>Email.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="about.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Email.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+    <None Include="Zodic\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.jpg" />
+    <Content Include="about.png" />
+    <Content Include="add1.png" />
+    <Content Include="ApplicationIcon.png" />
+    <Content Include="asd.png" />
+    <Content Include="back.png" />
+    <Content Include="back1.png" />
+    <Content Include="back2.JPG" />
+    <Content Include="icon.png" />
+    <Content Include="line.png" />
+    <Content Include="png\address.png" />
+    <Content Include="png\Add_Contact.png" />
+    <Content Include="png\bCancel.png" />
+    <Content Include="png\bd.png" />
+    <Content Include="png\body_inner_blue_bc.png" />
+    <Content Include="png\body_inner_call_btn.png" />
+    <Content Include="png\body_inner_cross.png" />
+    <Content Include="png\body_inner_tick.png" />
+    <Content Include="png\body_send.png" />
+    <Content Include="png\cancel.png" />
+    <Content Include="png\cancel_btn.png" />
+    <Content Include="png\card_1.png" />
+    <Content Include="png\card_10.png" />
+    <Content Include="png\card_11.png" />
+    <Content Include="png\card_12.png" />
+    <Content Include="png\card_13.png" />
+    <Content Include="png\card_14.png" />
+    <Content Include="png\card_15.png" />
+    <Content Include="png\card_2.png" />
+    <Content Include="png\card_3.png" />
+    <Content Include="png\card_4.png" />
+    <Content Include="png\card_5.png" />
+    <Content Include="png\card_6.png" />
+    <Content Include="png\card_7.png" />
+    <Content Include="png\card_8.png" />
+    <Content Include="png\card_9.png" />
+    <Content Include="png\ecard.png" />
+    <Content Include="png\edit.png" />
+    <Content Include="png\email.png" />
+    <Content Include="png\Feedback.png" />
+    <Content Include="png\help.png" />
+    <Content Include="png\phone.png" />
+    <Content Include="png\rate.png" />
+    <Content Include="png\share.png" />
+    <Content Include="png\slide_next.png" />
+    <Content Include="png\slide_prev.png" />
+    <Content Include="png\sms.png" />
+    <Content Include="png\via_email.png" />
+    <Content Include="png\via_sms.png" />
+    <Content Include="rate.png" />
+    <Content Include="snip.png" />
+    <Content Include="Background.png" />
+    <Content Include="sort.png" />
+    <Content Include="sortascend.png" />
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="up.png" />
+    <Content Include="Zodic\a1.png" />
+    <Content Include="Zodic\a10.png" />
+    <Content Include="Zodic\a11.png" />
+    <Content Include="Zodic\a12.png" />
+    <Content Include="Zodic\a2.png" />
+    <Content Include="Zodic\a3.png" />
+    <Content Include="Zodic\a4.png" />
+    <Content Include="Zodic\a5.png" />
+    <Content Include="Zodic\a6.png" />
+    <Content Include="Zodic\a7.png" />
+    <Content Include="Zodic\a8.png" />
+    <Content Include="Zodic\a9.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

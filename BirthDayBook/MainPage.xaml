@@ -1,0 +1,122 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="BirthDayBook.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Margin="0,10,0,0" >
+        <Grid.Background>
+            <ImageBrush ImageSource="about.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Popup Name="popupMessage" IsOpen="false" Visibility="Visible" Margin="0,0,0,0" OpacityMask="Black" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalOffset="55" VerticalOffset="200">
+            <StackPanel Width="357" HorizontalAlignment="Center" Height="296">
+                <StackPanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/png/body_inner_blue_bc.png"/>
+                </StackPanel.Background>
+                <TextBlock x:Name="tbChild" Text="Share With Friends" FontSize="36" Margin="0,10,0,10" FontFamily="Comic Sans MS" TextAlignment="Center" FontWeight="Bold"/>
+                <Image Name="imChild" Source="/Images/51.png" Width="200" Stretch="Fill"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <!--<Button Content="Restart" Click="RestartQuiz_Click" Width="200"></Button>-->
+                    <!--<Button Name="bNext" Content="Next" Click="NextQuestion_Click" Width="200"></Button>-->
+                </StackPanel>
+                <Button Content="" BorderThickness="0" Margin="98,0,92,0" Click="Via_Sms" Height="70">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="/png/via_sms.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Content="" BorderThickness="0" Click="Via_email" Margin="98,0,92,0" Height="76">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="/png/via_email.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Content=""  BorderThickness="0" Click="via_cancel" Margin="98,0,92,0" Height="65">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="/png/cancel_btn.png"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </Popup>
+        <Image HorizontalAlignment="Left" Height="65" Margin="402,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="/png/share.png" Tap="share_tap"/>
+
+
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"/>
+        <Image HorizontalAlignment="Left" Height="65" Margin="27,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="png/Add_Contact.png" Tap="tap1"/>
+
+        <ListBox Name="LB" Width="450" ItemsSource="{Binding}" SelectionChanged="listBox_SelectionChanged" Margin="12,214,29,30" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <ListBox.ItemTemplate >
+                <DataTemplate ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Button Width="450" Height="120" Click="Next_click" Background="#FF395899">
+                        <Button.Content>
+                    <StackPanel  Orientation="Horizontal" Height="80" Width="400" Background="#FF395899" >
+                        <Image Name="xyz" Source="{Binding Path=pImage}" Height="80" Width="80"/>
+                        <StackPanel Orientation="Vertical" Height="80">
+                            <StackPanel Orientation="Horizontal" Height="40">
+                                <TextBlock Width="10" FontSize="24" Text=" "  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                                        <TextBlock Width="200" FontSize="24" Text="{Binding Path=pName}"  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold" />
+                                        <!--<TextBlock Width="100" FontSize="24" Text=" Days Left"  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold"/>-->
+
+                                    </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="40">
+                                        <TextBlock Width="10" FontSize="24" Text=" "  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                                        <TextBlock Width="200" FontSize="20" Text="{Binding Path=pDate}"  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold" />
+                                        <!--<TextBlock Width="100" FontSize="24" Text="{Binding Path=dl}"  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold"/>-->
+
+                                    </StackPanel>
+                        </StackPanel>
+                                <!--<Image Name="xyz1" Source="{Binding Path=pImage}" Height="80" Width="80"/>-->
+                                <StackPanel Orientation="Vertical"  Height="80" Width="120" >
+                                    <StackPanel Orientation="Horizontal" Height="40" Width="120">
+                                        <TextBlock Width="120" FontSize="20" Text=" Days Left"  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                                     </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="40" Width="120">
+                                        <TextBlock Width="30" FontSize="20" Text="     "  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                                        <TextBlock Width="120" FontSize="20" Text="{Binding Path=dl}"  Foreground="White" Height="40" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <!--<StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=pName}" Foreground="Black"></TextBlock>
+                        <TextBlock Text="{Binding Path=pDate}" Foreground="Black"></TextBlock>                       
+                    </StackPanel>-->
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Image HorizontalAlignment="Left" Height="65" Margin="342,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="png/help.png" Tap="tapa"/>
+        <Image HorizontalAlignment="Left" Height="65" Margin="221,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="png/rate.png" Tap="rate"/>
+        <Image HorizontalAlignment="Left" Height="65" Margin="281.806,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="png/feedback.png" RenderTransformOrigin="0.5,0.5" Tap="tap12" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="1.24"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="img" HorizontalAlignment="Left" Height="100" Margin="133,109,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Image Name="abc" HorizontalAlignment="Left" Height="65" Margin="160,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="/sortascend.png" Tap="Sorting" />
+        <Image x:Name="abc_Copy" HorizontalAlignment="Left" Height="65" Margin="97,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="58" Source="/sort.png" Tap="DaysLeft"  />
+
+        <!--ContentPanel - place additional content here-->
+
+       
+
+    </Grid>
+    
+    
+
+</phone:PhoneApplicationPage>

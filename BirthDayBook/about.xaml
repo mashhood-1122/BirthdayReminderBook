@@ -1,0 +1,64 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="BirthDayBook.about"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="about.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="10,17,14,28" Grid.RowSpan="2">
+            <Button Content="Ok" HorizontalAlignment="Left" Margin="0,674,0,-25" VerticalAlignment="Top" Width="456" FontFamily="Comic Sans MS" FontWeight="Bold" Tap="Tapa"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,189,0,0" TextWrapping="Wrap" Text="How To Use Happy Birthday Book ?" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="22" Width="387"/>
+            <TextBlock HorizontalAlignment="Left" Margin="35,243,0,0" TextWrapping="Wrap" Text="1: Create A new Contact and Add its Details" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="35,289,0,0" TextWrapping="Wrap" Text="2: Add His/Her Photo With Detail" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="35,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" Width="387">
+            	<Run Text="3: Once Added to Birthday Book, you can"/>
+            	<LineBreak/>
+            	<Run Text="    view its details by tapping on it."/>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="35,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" Width="381">
+            	<Run Text="4: Setup Birthday Reminder so that you "/>
+            	<LineBreak/>
+            	<Run Text="    can wish your Contact at right time. "/>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="35,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" Width="381" Height="64">
+            	<Run Text="5: You can see Zodiac Sign and its Details"/>
+            	<LineBreak/>
+            	<Run Text="     to know more about His / Her."/>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="35,556,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial" FontSize="20">
+            	<Run Text="6: Once Setup , Then Forget Birthday book"/>
+            	<LineBreak/>
+            	<Run Text="    Reminds you At your Contact Birthday."/>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="35,623,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" Width="387">
+            	<Run Text="7: You Can wish your Friend by sending "/>
+            	<LineBreak/>
+            	<Run Text="    Email ,SMS and By Call."/>
+            </TextBlock>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
